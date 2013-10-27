@@ -1,0 +1,11 @@
+JSON_grammar = """value => array | object | string | number | true | false | null
+string => "[^"]+"
+pair => string : value
+members => pair , members | pair  
+object => \{ members \} | \{\}
+array => \[ elements \] | \[\]
+elements => value , elements | value
+number => int frac exp | int frac | int frac | int
+exp => [eE][+-]?[1-9]+
+frac => \.[1-9]+[0-9]*
+int => -?[1-9]+[0-9]*"""
